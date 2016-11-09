@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008000</color>
+    <color name="colorPrimaryDark">#006400</color>
+
+    <color name="colorAccent">#FF4081</color>
+    <color name="viewBg">#f1f5f8</color>
+    <color name="album_title">#4c4c4c</color>
+    <color name="accountMain">#000000</color>
+    <color name="accountSecondary">#BABABA</color>
+
+    <color name="bgServices">#E1E1E1</color>
+    <color name="cardSectionsText">#A9A9A9</color>
+    <color name="txtTitleServices">#929292</color>
+    <color name="bgOverlay50">#80000000</color>
+
+    <color name="colorPrimary70">#AA1c83c6</color>
+    <color name="colorWhite70">#AAFFFFFF</color>
+</resources>

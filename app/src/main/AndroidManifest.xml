@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bosch.myfootprint">
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.flybits.flybitsbank.permission.C2D_MESSAGE" />
+
+    <permission
+        android:name="com.flybits.flybitsbank.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <!-- Activity Recognition Permissions -->
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+
+    <!-- Carrier Permissions -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- Beacon Permissions -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Location / Beacon Permissions -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Network Permissions -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <application
+        android:name=".FootPrintApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".HomeActivity"
+
+            android:screenOrientation="portrait"></activity>
+        <meta-data
+            android:name="com.flybits.apikey"
+            android:value="279CCC06-4183-4744-8471-9A0866C97AD7" />
+
+        <service android:name="com.flybits.core.api.services.PushService" />
+
+        <!-- Services and Receivers for Activity Recognition -->
+        <receiver android:name="com.flybits.core.api.context.receivers.ActivityCollectionAlarmManager" />
+
+        <service android:name="com.flybits.core.api.context.services.ActivityCollectionService" />
+        <service android:name="com.flybits.core.api.context.plugins.activity.DeviceRecognitionServiceIntent" />
+
+        <!-- Services and Receivers for Battery -->
+        <receiver android:name="com.flybits.core.api.context.receivers.BatteryLifeCollectionAlarmManager" />
+
+        <service android:name="com.flybits.core.api.context.services.BatteryLifeCollectionService" />
+
+        <!-- Services and Receivers for Beacons -->
+        <receiver android:name="com.flybits.core.api.context.receivers.BeaconCollectionAlarmManager" />
+
+        <service android:name="com.flybits.core.api.context.services.BeaconCollectionService" />
+
+        <!-- Services and Receivers for Carrier -->
+        <receiver android:name="com.flybits.core.api.context.receivers.CarrierCollectionAlarmManager" />
+
+        <service android:name="com.flybits.core.api.context.services.CarrierCollectionService" />
+
+        <!-- Services and Receivers for Language -->
+        <receiver android:name="com.flybits.core.api.context.receivers.LanguageCollectionAlarmManager" />
+
+        <service android:name="com.flybits.core.api.context.services.LanguageCollectionService" />
+
+        <!-- Services and Receivers for Location -->
+        <receiver android:name="com.flybits.core.api.context.receivers.LocationCollectionAlarmManager" />
+
+        <service android:name="com.flybits.core.api.context.services.LocationCollectionService" />
+
+        <!-- Services and Receivers for Network -->
+        <receiver android:name="com.flybits.core.api.context.receivers.NetworkCollectionAlarmManager" />
+
+        <service android:name="com.flybits.core.api.context.services.NetworkCollectionService" />
+        <service android:name="com.flybits.core.api.context.services.ContextUploadingService" />
+
+        <receiver android:name="com.flybits.core.api.context.receivers.ContextCollectionAlarmManager" />
+    </application>
+
+</manifest>
